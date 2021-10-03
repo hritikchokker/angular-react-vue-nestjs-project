@@ -1,0 +1,55 @@
+{
+  "npmScope": "angular-react-vue-nest-project",
+  "affected": {
+    "defaultBase": "master"
+  },
+  "implicitDependencies": {
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    ".eslintrc.json": "*"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/workspace/tasks-runners/default",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"]
+      }
+    }
+  },
+  "targetDependencies": {
+    "build": [
+      {
+        "target": "build",
+        "projects": "dependencies"
+      }
+    ]
+  },
+  "projects": {
+    "api-nestjs": {
+      "tags": []
+    },
+    "client-angular": {
+      "tags": []
+    },
+    "client-angular-e2e": {
+      "tags": [],
+      "implicitDependencies": ["client-angular"]
+    },
+    "client-react": {
+      "tags": []
+    },
+    "client-react-e2e": {
+      "tags": [],
+      "implicitDependencies": ["client-react"]
+    },
+    "client-vue": {
+      "tags": []
+    },
+    "client-vue-e2e": {
+      "tags": [],
+      "implicitDependencies": ["client-vue"]
+    }
+  }
+}
